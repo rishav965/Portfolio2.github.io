@@ -57,7 +57,7 @@
 
 
 var typed = new Typed(".multiple-text", {
-    strings: ["Tech Enthusiast", "Tech Enthusiast", "Front-End Developer", "Python Coder"],
+    strings: ["Tech Enthusiast", "Tech Enthusiast", "Front-End Developer"],
     typeSpeed: 100,
     backSpeed: 100, 
     backdelay: 1000, 
