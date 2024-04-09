@@ -79,6 +79,22 @@ document.getElementById('contact').addEventListener('submit', function (event) {
     window.open(`data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`);
 });
 
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get user input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Create a CSV string
+    const csvData = `${name},${email},${message}\n`;
+
+    // Now you can use this csvData to save it to a file or send it to a server.
+    // For simplicity, let's open a new window with the CSV data:
+    window.open(`data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`);
+});
+
 
 
 
