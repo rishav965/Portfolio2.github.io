@@ -52,6 +52,32 @@
 // menuIcon.classList.remove('bx-x');
 // navbar.classList.remove('active');
 
+document.getElementById('contact').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get user input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Now you have the user's data (name, email, message)
+    // You can proceed to store it or process it further.
+});
+document.getElementById('contact').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get user input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Create a CSV string
+    const csvData = `${name},${email},${message}\n`;
+
+    // Now you can use this csvData to save it to a file or send it to a server.
+    // For simplicity, let's open a new window with the CSV data:
+    window.open(`data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`);
+});
 
 
 
