@@ -95,7 +95,36 @@
 //     window.open(`data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`);
 // });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar a");
 
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            // Remove active class from all links
+            navLinks.forEach((navLink) => navLink.classList.remove("active"));
+
+            // Add active class to the clicked link
+            this.classList.add("active");
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Send form data using EmailJS
+        emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form, "YOUR_USER_ID")
+            .then(function (response) {
+                alert("Message sent successfully!");
+                form.reset(); // Clear the form
+            }, function (error) {
+                alert("Failed to send message. Please try again.");
+            });
+    });
+});
 
 
 var typed = new Typed(".multiple-text", {
